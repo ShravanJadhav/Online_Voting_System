@@ -26,11 +26,9 @@ public class RegisterUser extends HttpServlet {
 		  String email = request.getParameter("email");
 		  
 		   
-		  //System.out.println(name +" " +dob);
+		 
 		  try{ 
 			  PreparedStatement preparedStatement = con.prepareStatement("insert into voters (name,pnumber,email,voter_card_number,addres,dob)values('"+name+"','"+contact+"','"+email+"','"+voter_card_number+"','"+address+"','"+dob+"')");
-
-			  //System.out.println(name +"*" +dob);
 			  preparedStatement.executeUpdate();
 			  response.sendRedirect("adminWelcome.jsp");
 		  }catch(SQLException e) {
